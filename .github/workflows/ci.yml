@@ -1,0 +1,29 @@
+name: CI/CD
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '20'
+    - name: Install Frontend Dependencies
+      run: cd frontend && npm install
+    - name: Lint Frontend
+      run: cd frontend && npm run lint
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+    - name: Install Backend Dependencies
+      run: cd backend && pip install -r requirements.txt
+    - name: Test Backend
+      run: cd backend && pytest

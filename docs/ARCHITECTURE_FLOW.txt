@@ -1,0 +1,46 @@
+                     User
+                       │
+          ┌────────────┴─────────────┐
+          │                          │
+          ▼                          ▼
+   Website Scanner             QR Scanner
+          │                          │
+          └────────────┬─────────────┘
+                       │
+                       ▼
+            Input Validation Agent
+                       │
+                       ▼
+              QR Processing Agent
+                       │
+                       ▼
+          Security Analysis Agent
+                       │
+      ┌────────────────┼────────────────┐
+      ▼                ▼                ▼
+ SSL Checker      Threat Intel      WHOIS
+      │                │                │
+      └────────────────┼────────────────┘
+                       ▼
+         Brand Verification Agent
+                       │
+                       ▼
+         Risk Assessment Agent
+                       │
+                       ▼
+          Explanation Agent (RAG)
+                       │
+          ┌────────────┼─────────────┐
+          ▼            ▼             ▼
+ Recommendation   Official Site   AI Chat
+      Agent       Verification      Agent
+          │            │             │
+          └────────────┼─────────────┘
+                       ▼
+             Report Generation Agent
+                       │
+                       ▼
+               PostgreSQL + pgvector
+                       │
+                       ▼
+                  React Dashboard
