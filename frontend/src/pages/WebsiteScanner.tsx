@@ -20,7 +20,8 @@ const WebsiteScanner = () => {
 
     try {
       const token = localStorage.getItem('access_token');
-      const response = await fetch('/api/scan/url', {
+      const baseUrl = import.meta.env.VITE_API_URL || 'http://localhost:8000/api';
+      const response = await fetch(`${baseUrl}/scan/url`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

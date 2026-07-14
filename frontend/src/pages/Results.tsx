@@ -23,16 +23,18 @@ const Results = () => {
     fetchReport();
   }, [id]);
 
+  const getBaseUrl = () => import.meta.env.VITE_API_URL || 'http://localhost:8000/api';
+
   const handleDownloadPDF = () => {
-    window.open(`/api/report/${id}/download`, '_blank');
+    window.open(`${getBaseUrl()}/report/${id}/download`, '_blank');
   };
 
   const handleDownloadJSON = () => {
-    window.open(`/api/report/${id}/json`, '_blank');
+    window.open(`${getBaseUrl()}/report/${id}/json`, '_blank');
   };
 
   const handleDownloadMD = () => {
-    window.open(`/api/report/${id}/markdown`, '_blank');
+    window.open(`${getBaseUrl()}/report/${id}/markdown`, '_blank');
   };
 
   if (loading) return <div className="flex justify-center p-20"><div className="animate-spin rounded-full h-12 w-12 border-t-2 border-primary"></div></div>;

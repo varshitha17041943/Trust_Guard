@@ -12,7 +12,8 @@ const Scan = () => {
     setIsScanning(true);
     setEvents([]);
     
-    const response = await fetch('/scans/stream', {
+    const baseUrl = import.meta.env.VITE_API_URL ? import.meta.env.VITE_API_URL.replace('/api', '') : 'http://localhost:8000';
+    const response = await fetch(`${baseUrl}/scans/stream`, {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({target_url: url})
