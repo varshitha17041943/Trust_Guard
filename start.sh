@@ -2,7 +2,7 @@
 
 # Start the Node.js MCP Server in the background
 echo "Starting Node.js MCP Server..."
-cd /app/mcp_server
+cd /app/mcp
 npm start &
 
 # Wait 3 seconds to let the Node server boot up

@@ -21,7 +21,7 @@ WORKDIR /app
 COPY . .
 
 # Install MCP Server dependencies (Node.js)
-RUN cd mcp_server && npm install && npm run build
+RUN cd mcp && npm install && npm run build
 
 # Install FastAPI Backend dependencies (Python)
 RUN cd backend && pip install --no-cache-dir -r requirements.txt
