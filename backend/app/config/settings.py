@@ -1,3 +1,4 @@
+import os
 from pydantic_settings import BaseSettings
 
 class Settings(BaseSettings):
@@ -7,7 +8,7 @@ class Settings(BaseSettings):
     SECRET_KEY: str = "supersecretkey"
     ALGORITHM: str = "HS256"
     ACCESS_TOKEN_EXPIRE_MINUTES: int = 30
-    DATABASE_URL: str = "sqlite+aiosqlite:///./trustguard.db"
+    DATABASE_URL: str = "sqlite+aiosqlite:////tmp/trustguard.db" if os.environ.get("VERCEL") else "sqlite+aiosqlite:///./trustguard.db"
     ENVIRONMENT: str = "development"
     RATE_LIMIT_PER_MINUTE: int = 60
 
