@@ -13,3 +13,4 @@ pytest
 matplotlib
 fpdf
 aiosqlite
+httpx
