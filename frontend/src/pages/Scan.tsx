@@ -12,7 +12,7 @@ const Scan = () => {
     setIsScanning(true);
     setEvents([]);
     
-    const response = await fetch('http://localhost:8000/scans/stream', {
+    const response = await fetch('/scans/stream', {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({target_url: url})

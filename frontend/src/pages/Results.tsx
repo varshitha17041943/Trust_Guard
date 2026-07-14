@@ -23,16 +23,16 @@ const Results = () => {
     fetchReport();
   }, [id]);
 
-  const handleDownloadPDF = async () => {
-    window.open(`http://localhost:8000/api/report/${id}/download`, '_blank');
+  const handleDownloadPDF = () => {
+    window.open(`/api/report/${id}/download`, '_blank');
   };
 
-  const handleDownloadJSON = async () => {
-    window.open(`http://localhost:8000/api/report/${id}/json`, '_blank');
+  const handleDownloadJSON = () => {
+    window.open(`/api/report/${id}/json`, '_blank');
   };
 
-  const handleDownloadMD = async () => {
-    window.open(`http://localhost:8000/api/report/${id}/markdown`, '_blank');
+  const handleDownloadMD = () => {
+    window.open(`/api/report/${id}/markdown`, '_blank');
   };
 
   if (loading) return <div className="flex justify-center p-20"><div className="animate-spin rounded-full h-12 w-12 border-t-2 border-primary"></div></div>;

@@ -20,7 +20,7 @@ const WebsiteScanner = () => {
 
     try {
       const token = localStorage.getItem('access_token');
-      const response = await fetch('http://localhost:8000/api/scan/url', {
+      const response = await fetch('/api/scan/url', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
