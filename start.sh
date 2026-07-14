@@ -1,11 +1,11 @@
 #!/bin/bash
 
-# Start the Node.js MCP Server in the background
-echo "Starting Node.js MCP Server..."
+# Start the Python MCP Server in the background on port 3001
+echo "Starting Python MCP Server..."
 cd /app/mcp
-npm start &
+uvicorn server:app --host 0.0.0.0 --port 3001 &
 
-# Wait 3 seconds to let the Node server boot up
+# Wait 3 seconds to let the MCP server boot up
 sleep 3
 
 # Start the Python FastAPI Backend in the foreground
